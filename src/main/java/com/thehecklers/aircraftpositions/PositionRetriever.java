@@ -3,7 +3,6 @@ package com.thehecklers.aircraftpositions;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -16,7 +15,7 @@ public class PositionRetriever {
             WebClient.create("http://localhost:7634");
 
     @GetMapping("/aircraft")
-    public Iterable<Aircraft> retrieveAircraftPositions(Model model) {
+    public Iterable<Aircraft> retrieveAircraftPositions() {
         repository.deleteAll();
 
         client.get()

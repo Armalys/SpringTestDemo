@@ -11,7 +11,7 @@ public class PositionController {
     private final PositionRetriever positionRetriever;
 
     @GetMapping("/aircraft")
-    public Iterable<Aircraft> getCurrentAircraftPositions(Model model) {
-        return positionRetriever.retrieveAircraftPositions(model);
+    public Iterable<Aircraft> getCurrentAircraftPositions() {
+        return positionRetriever.retrieveAircraftPositions();
     }
 }
